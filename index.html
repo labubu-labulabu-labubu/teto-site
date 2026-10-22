@@ -4,103 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>海豚启动器 DolphinCraft Launcher</title>
-<meta name="description" content="海豚启动器是一个 Windows 上的 Minecraft 启动器：选版本、装模组、看崩溃原因。免费，只有一个安装包。">
+<meta name="description" content="海豚启动器是一个 Windows 上的 Minecraft 启动器：选版本、装模组、看崩溃原因。免费，只有一个文件，下载就能用。">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
-<style>
-  :root{--fg:#1b1b1f;--muted:#5f6368;--line:#e2e3e6;--link:#1a5fd0;--btn:#1f6feb}
-  *{box-sizing:border-box}
-  body{margin:0;background:#fff;color:var(--fg);
-    font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
-    -webkit-font-smoothing:antialiased}
-  .page{max-width:720px;margin:0 auto;padding:48px 22px 64px}
-  header{display:flex;gap:14px;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line)}
-  header img{width:48px;height:48px;border-radius:10px;border:1px solid var(--line)}
-  h1{font-size:20px;margin:0;font-weight:600}
-  .sub{margin:2px 0 0;color:var(--muted);font-size:13.5px}
-  h2{font-size:16px;margin:36px 0 8px;font-weight:600}
-  p{margin:10px 0}
-  .muted{color:var(--muted)}
-  a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .dl{margin-top:26px;border:1px solid var(--line);border-radius:10px;padding:20px}
-  .dl .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--btn);color:#fff;font-weight:600;font-size:15px;
-    padding:10px 20px;border-radius:7px}
-  .btn:hover{background:#1a5fd0;text-decoration:none}
-  .file{font-size:13.5px;color:var(--muted)}
-  .meta{margin:14px 0 0;font-size:12.6px;color:var(--muted);word-break:break-all}
-  .meta code{font-family:ui-monospace,Consolas,monospace;color:#3c4043}
-  ul,ol{margin:8px 0;padding-left:22px}
-  li{margin:5px 0}
-  details{border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}
-  summary{cursor:pointer;font-weight:600;font-size:15px}
-  details p{margin:8px 0 2px;color:#333}
-  .note{border-left:3px solid var(--line);padding:2px 0 2px 14px;color:var(--muted);font-size:14px;margin:18px 0}
-  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;
-    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-</style>
+<style>  :root{--fg:#1b1b1f;--muted:#5f6368;--line:#e2e3e6;--link:#1a5fd0;--btn:#1f6feb}  *{box-sizing:border-box}  body{margin:0;background:#fff;color:var(--fg);    font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;    -webkit-font-smoothing:antialiased}  .page{max-width:720px;margin:0 auto;padding:48px 22px 64px}  header{display:flex;gap:14px;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line)}  header img{width:48px;height:48px;border-radius:10px;border:1px solid var(--line)}  h1{font-size:20px;margin:0;font-weight:600}  .sub{margin:2px 0 0;color:var(--muted);font-size:13.5px}  h2{font-size:16px;margin:36px 0 8px;font-weight:600}  p{margin:10px 0}  .muted{color:var(--muted)}  a{color:var(--link);text-decoration:none}  a:hover{text-decoration:underline}  .dl{margin-top:26px;border:1px solid var(--line);border-radius:10px;padding:20px}  .dl .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}  .btn{display:inline-block;background:var(--btn);color:#fff;font-weight:600;font-size:15px;    padding:10px 20px;border-radius:7px}  .btn:hover{background:#1a5fd0;text-decoration:none}  .file{font-size:13.5px;color:var(--muted)}  .meta{margin:14px 0 0;font-size:12.6px;color:var(--muted);word-break:break-all}  .meta code{font-family:ui-monospace,Consolas,monospace;color:#3c4043}  ul,ol{margin:8px 0;padding-left:22px}  li{margin:5px 0}  details{border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}  summary{cursor:pointer;font-weight:600;font-size:15px}  details p{margin:8px 0 2px;color:#333}  .note{border-left:3px solid var(--line);padding:2px 0 2px 14px;color:var(--muted);font-size:14px;margin:18px 0}  .video{margin:14px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000}  .video video{display:block;width:100%;height:auto}  .cl{margin:12px 0 0;padding-left:0;list-style:none}  .cl li{display:flex;gap:10px;align-items:baseline;margin:7px 0}  .tag{flex:0 0 auto;font:600 11px/1.6 ui-monospace,Consolas,monospace;color:#1a5fd0;    background:#eaf2ff;border-radius:4px;padding:1px 6px}  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}</style>
 </head>
 <body>
 <div class="page">
-
-<header>
-  <img src="icon.png" alt="海豚启动器图标">
-  <div>
-    <h1>海豚启动器 DolphinCraft Launcher</h1>
-    <p class="sub">Windows 上的 Minecraft 启动器 · v1.0 · 免费</p>
-  </div>
+<header>  <img src="icon.png" alt="海豚启动器图标">  <div>    <h1>海豚启动器 DolphinCraft Launcher</h1>    <p class="sub">Windows 上的 Minecraft 启动器 · v1.3.0 · 免费</p>  </div>
 </header>
-
 <p>这是一个给不想折腾的玩家做的 Minecraft 启动器。选版本、装模组、看崩溃原因都在一个窗口里完成，不用自己配 Java，也不用注册账号。</p>
-
-<div class="dl">
-  <div class="row">
-    <a class="btn" href="DolphinCraft-Setup.exe">下载安装包 v1.0（14.1 MB）</a>
-    <span class="file">DolphinCraft-Setup.exe · Windows 10 / 11 64 位</span>
-  </div>
-  <p class="meta">数字签名 DolphinCraft Launcher（自签名证书）· SHA-256 <code>1f2388d174d41f049af5e9022a80ce1d5e5080d2d66d3f38acf91263661e6124</code></p>
+<div class="dl">  <div class="row">    <a class="btn" href="DolphinCraft-Launcher.exe">下载 v1.3.0（13.3 MB）</a>    <span class="file">DolphinCraft-Launcher.exe · Windows 10 / 11 64 位 · 不用安装</span>  </div>  <p class="meta">数字签名 DolphinCraft Launcher（自签名证书）· SHA-256 <code>4a3eddf25d3a7b371568d22991eff1b82adcc2eea87320e9d1104170ff47f0c8</code>
+</p>
 </div>
-
-<p class="note">这里只发布这一个安装包，没有「绿色版」「破解版」之类的东西。如果在别的网站看到叫「海豚启动器」的下载，那不是本站的文件。</p>
-
-<h2>安装</h2>
-<ol>
-  <li>下载上面的安装包，双击运行。</li>
-  <li>选安装位置，下一步，等它装完。</li>
-  <li>从桌面或开始菜单打开「海豚启动器」。</li>
+<p class="note">就这一个文件，没有「绿色版」「破解版」之类的东西。如果在别的网站看到叫「海豚启动器」的下载，那不是本站的文件。</p>
+<h2>宣传片</h2>
+<div class="video">  <video controls preload="none" poster="promo-poster.jpg" width="1920" height="1080">    <source src="DolphinCraft-promo.mp4" type="video/mp4">    你的浏览器不支持 video 标签，<a href="DolphinCraft-promo.mp4">点这里下载视频</a>。  </video>
+</div>
+<p class="muted">46 秒，1080p。画面都是启动器自己的界面。</p>
+<h2>1.3.0 更新</h2>
+<ul class="cl">  <li>
+<span class="tag">新</span>工具中心加了「诊断」页：直接读 <code>latest.log</code> 和崩溃报告，指出是哪个模组、是缺前置、内存不够还是 Java 版本不对，同一类问题只报一次。</li>  <li>
+<span class="tag">新</span>工具中心加了「模组」页：列出 <code>mods</code> 里的每个 jar、版本和大小，标出重复的、缺前置的、和当前游戏版本对不上的；重复的能一键禁用，只留新的那个。</li>  <li>
+<span class="tag">改</span>崩溃诊断多认了几种情况：类找不到、Mixin 崩、GLFW 初始化失败、显卡驱动报错、端口被占用。</li>  <li>
+<span class="tag">改</span>界面细节：诊断结果里附上日志原话，长路径不再把卡片撑变形；底部提示改成一句话，不再重复上面的结论。</li>
+</ul>
+<h2>怎么用</h2>
+<ol>  <li>下载上面的 exe，双击运行。不用安装，不用装 Python。</li>  <li>第一次开会让你选游戏目录；默认用桌面上的 <code>.minecraft</code>，想换就点「浏览」。</li>  <li>左边选版本，没装的先点「安装 / 更新」；然后点「启动游戏」。</li>
 </ol>
-<p class="muted">第一次运行 Windows 可能会弹「已保护你的电脑」。安装包有数字签名，但用的是自签名证书，没有买商业代码签名证书，所以系统默认不信任它。点「更多信息 → 仍要运行」就行；不放心可以先核对上面的 SHA-256。</p>
-
+<p class="muted">第一次运行 Windows 可能会弹「已保护你的电脑」。文件有数字签名，但用的是自签名证书，没有买商业代码签名证书，所以系统默认不信任它。点「更多信息 → 仍要运行」就行；不放心可以先核对上面的 SHA-256。</p>
 <h2>能做什么</h2>
-<ul>
-  <li>选版本、下载游戏文件、启动，全程在界面里点，不用手动改配置文件。</li>
-  <li>装模组：Fabric、Forge、NeoForge、Quilt；整合包（.mrpack / .zip）可以直接导入。</li>
-  <li>按游戏版本自动准备对应的 Java，不用为了一个 1.7.10 的包单独去装 Java 8。</li>
-  <li>启动失败时会读日志，指出是哪个模组、内存不够还是 Java 版本不对，而不是只甩一段报错。</li>
-  <li>离线模式：没有正版账号也能玩单人和离线服务器，要连正版服务器再登录微软账号。</li>
-  <li>也可以在输入框里直接写「装个钠和 Iris」，它按你的游戏版本去找（这项需要本机跑本地模型，没有模型用列表手动装效果一样）。</li>
+<ul>  <li>选版本、下载游戏文件、启动，全程在界面里点，不用手动改配置文件。</li>  <li>装模组：Fabric、Forge、NeoForge、Quilt；整合包（.mrpack / .zip）可以直接导入。</li>  <li>按游戏版本自动准备对应的 Java，不用为了一个 1.7.10 的包单独去装 Java 8。</li>  <li>启动失败时会读日志，指出是哪个模组、内存不够还是 Java 版本不对，而不是只甩一段报错。</li>  <li>工具中心：诊断、模组管理、存档备份还原、截图、磁盘占用。</li>  <li>离线模式：没有正版账号也能玩单人和离线服务器，要连正版服务器再登录微软账号。</li>  <li>也可以在输入框里直接写「装个钠和 Iris」，它按你的游戏版本去找（这项需要本机跑本地模型，没有模型用列表手动装效果一样）。</li>
 </ul>
-
 <h2>常见问题</h2>
-<details><summary>要自己装 Java 吗？</summary><p>不用。启动器会按你选的游戏版本准备对应的 Java 运行时，只准备游戏要用的那个。</p></details>
-<details><summary>它会不会往系统里乱装东西？</summary><p>不会。游戏和模组都放在你自己指定的目录里，安装包只写自己的程序目录，卸载时一起清掉。</p></details>
-<details><summary>怎么卸载？</summary><p>Windows 设置 → 应用 → 已安装的应用 → 找到「海豚启动器」→ 卸载。游戏目录不会跟着删，需要的话自己删。</p></details>
-<details><summary>支持哪些版本？</summary><p>1.7.10 及以上，原版和主流的模组加载器都可以。</p></details>
-<details><summary>为什么没有代码签名？</summary><p>个人项目，没有买证书。所以会出现 SmartScreen 提示，这是没签名程序的正常表现，不代表文件有问题。</p></details>
-
+<details>
+<summary>要自己装 Java 吗？</summary>
+<p>不用。启动器会按你选的游戏版本准备对应的 Java 运行时，只准备游戏要用的那个。</p>
+</details>
+<details>
+<summary>它会不会往系统里乱装东西？</summary>
+<p>不会。单个 exe，不写注册表、不建服务。配置和日志放在 <code>%LOCALAPPDATA%\DolphinCraftLauncher</code>，游戏和模组都放在你自己指定的目录里。</p>
+</details>
+<details>
+<summary>怎么卸载？</summary>
+<p>删掉下载的那个 exe，再删掉 <code>%LOCALAPPDATA%\DolphinCraftLauncher</code> 就干净了。游戏目录不会跟着删，需要的话自己删。</p>
+</details>
+<details>
+<summary>支持哪些版本？</summary>
+<p>1.7.10 及以上，原版和主流的模组加载器都可以。</p>
+</details>
+<details>
+<summary>为什么还会提示不安全？</summary>
+<p>签了，但用的是自签名证书，不是花钱买的商业证书，所以 Windows 默认不信任这个签名者，SmartScreen 照样会提示。核对上面的 SHA-256 能确认文件没被改过。</p>
+</details>
 <h2>系统要求</h2>
-<ul>
-  <li>Windows 10（1809 及以上）或 Windows 11，64 位</li>
-  <li>内存 4 GB 以上；加模组建议 8 GB</li>
-  <li>程序本身约 300 MB，游戏文件和模组另算</li>
+<ul>  <li>Windows 10（1809 及以上）或 Windows 11，64 位</li>  <li>内存 4 GB 以上；加模组建议 8 GB</li>  <li>程序本体约 14 MB，按需下载的 Java 和游戏文件另算</li>
 </ul>
-
-<footer>
-  <span>海豚启动器 · DolphinCraft Launcher</span>
-  <span>miku.9k.beer · 2026-10-22</span>
+<footer>  <span>海豚启动器 · DolphinCraft Launcher</span>  <span>miku.9k.beer · 2026-10-23</span>
 </footer>
-
 </div>
 </body>
 </html>
