@@ -22,10 +22,10 @@
 </head>
 <body>
 <div class="page">
-<header>  <img src="icon.png" alt="海豚启动器图标">  <div>    <h1>海豚启动器 DolphinCraft Launcher</h1>    <p class="sub">Windows 上的 Minecraft 启动器 · v1.3.0 · 免费</p>  </div>
+<header>  <img src="icon.png" alt="海豚启动器图标">  <div>    <h1>海豚启动器 DolphinCraft Launcher</h1>    <p class="sub">Windows 上的 Minecraft 启动器 · v1.3.2 · 免费</p>  </div>
 </header>
 <p>这是一个给不想折腾的玩家做的 Minecraft 启动器。选版本、装模组、看崩溃原因都在一个窗口里完成，不用自己配 Java，也不用注册账号。</p>
-<div class="dl">  <div class="row">    <a class="btn" href="DolphinCraft-Launcher.exe">下载 v1.3.0（13.3 MB）</a>    <span class="file">DolphinCraft-Launcher.exe · Windows 10 / 11 64 位 · 不用安装</span>  </div>  <p class="meta">数字签名 DolphinCraft Launcher（自签名证书）· SHA-256 <code>4a3eddf25d3a7b371568d22991eff1b82adcc2eea87320e9d1104170ff47f0c8</code>
+<div class="dl">  <div class="row">    <a class="btn" href="DolphinCraft-Launcher.exe">下载 v1.3.2（13.4 MB）</a>    <span class="file">DolphinCraft-Launcher.exe · Windows 10 / 11 64 位 · 不用安装</span>  </div>  <p class="meta">数字签名 DolphinCraft Launcher（自签名证书）· SHA-256 <code>b204803f21b5e862cbaa194f42afb391af47d0dcc909296646feeb2c8bec8a40</code>
 </p>
 </div>
 <p class="note">就这一个文件，没有「绿色版」「破解版」之类的东西。如果在别的网站看到叫「海豚启动器」的下载，那不是本站的文件。</p>
@@ -33,19 +33,21 @@
 <div class="video">  <video controls preload="none" poster="promo-poster.jpg" width="1920" height="1080">    <source src="DolphinCraft-promo.mp4" type="video/mp4">    你的浏览器不支持 video 标签，<a href="DolphinCraft-promo.mp4">点这里下载视频</a>。  </video>
 </div>
 <p class="muted">46 秒，1080p。画面都是启动器自己的界面。</p>
-<h2>1.3.0 更新</h2>
+<h2>1.3.2 更新</h2>
 <ul class="cl">  <li>
-<span class="tag">新</span>工具中心加了「诊断」页：直接读 <code>latest.log</code> 和崩溃报告，指出是哪个模组、是缺前置、内存不够还是 Java 版本不对，同一类问题只报一次。</li>  <li>
-<span class="tag">新</span>工具中心加了「模组」页：列出 <code>mods</code> 里的每个 jar、版本和大小，标出重复的、缺前置的、和当前游戏版本对不上的；重复的能一键禁用，只留新的那个。</li>  <li>
-<span class="tag">改</span>崩溃诊断多认了几种情况：类找不到、Mixin 崩、GLFW 初始化失败、显卡驱动报错、端口被占用。</li>  <li>
-<span class="tag">改</span>界面细节：诊断结果里附上日志原话，长路径不再把卡片撑变形；底部提示改成一句话，不再重复上面的结论。</li>
+<span class="tag">新</span>新手助手改用云端 AI：再也不用自己配模型，装上就能用。直接用中文说「我想要光影，但有点卡」，它按你的配置给方案。</li>  <li>
+<span class="tag">新</span>游戏版本列表右上角加了「导入」：以前在别的地方装好的版本（比如 PCL 留下的那一堆），选一下目录就直接搬进来，不用重新下载。</li>  <li>
+<span class="tag">新</span>三种选法都认：整个 <code>.minecraft</code>、里面的 <code>versions</code> 文件夹，或者单独一个版本文件夹。没有版本文件的杂项目录会自己跳过。</li>  <li>
+<span class="tag">改</span>版本文件夹明明在、启动器就是不认的（缺描述文件），导入时只补那一个文件，jar 和里面的东西一个都不动。</li>  <li>
+<span class="tag">改</span>同名的版本不覆盖，直接跳过；导入完会告诉你哪些还缺原版本体、哪些本来就有，缺的点一次「安装 / 更新」补齐就行。</li>  <li>
+<span class="tag">改</span>启动器第一次启动默认打开 AI 助手，不用进设置里找开关。</li>
 </ul>
 <h2>怎么用</h2>
 <ol>  <li>下载上面的 exe，双击运行。不用安装，不用装 Python。</li>  <li>第一次开会让你选游戏目录；默认用桌面上的 <code>.minecraft</code>，想换就点「浏览」。</li>  <li>左边选版本，没装的先点「安装 / 更新」；然后点「启动游戏」。</li>
 </ol>
 <p class="muted">第一次运行 Windows 可能会弹「已保护你的电脑」。文件有数字签名，但用的是自签名证书，没有买商业代码签名证书，所以系统默认不信任它。点「更多信息 → 仍要运行」就行；不放心可以先核对上面的 SHA-256。</p>
 <h2>能做什么</h2>
-<ul>  <li>选版本、下载游戏文件、启动，全程在界面里点，不用手动改配置文件。</li>  <li>装模组：Fabric、Forge、NeoForge、Quilt；整合包（.mrpack / .zip）可以直接导入。</li>  <li>按游戏版本自动准备对应的 Java，不用为了一个 1.7.10 的包单独去装 Java 8。</li>  <li>启动失败时会读日志，指出是哪个模组、内存不够还是 Java 版本不对，而不是只甩一段报错。</li>  <li>工具中心：诊断、模组管理、存档备份还原、截图、磁盘占用。</li>  <li>离线模式：没有正版账号也能玩单人和离线服务器，要连正版服务器再登录微软账号。</li>  <li>也可以在输入框里直接写「装个钠和 Iris」，它按你的游戏版本去找（这项需要本机跑本地模型，没有模型用列表手动装效果一样）。</li>
+<ul>  <li>选版本、下载游戏文件、启动，全程在界面里点，不用手动改配置文件。</li>  <li>以前装好的版本能直接导入：选一下目录就把版本搬进来，不用重下。</li>  <li>装模组：Fabric、Forge、NeoForge、Quilt；整合包（.mrpack / .zip）可以直接导入。</li>  <li>按游戏版本自动准备对应的 Java，不用为了一个 1.7.10 的包单独去装 Java 8。</li>  <li>启动失败时会读日志，指出是哪个模组、内存不够还是 Java 版本不对，而不是只甩一段报错。</li>  <li>工具中心：诊断、模组管理、存档备份还原、截图、磁盘占用。</li>  <li>离线模式：没有正版账号也能玩单人和离线服务器，要连正版服务器再登录微软账号。</li>  <li>也可以在输入框里直接写「装个钠和 Iris」，它按你的游戏版本去找（内置云端 AI，装上就能用，不用另外配置）。</li>
 </ul>
 <h2>常见问题</h2>
 <details>
