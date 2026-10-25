@@ -1,0 +1,7 @@
+{
+  "versionCode": 172220,
+  "versionName": "2.2.0",
+  "notes": "· 工具箱加了「问一句」：说人话就去找模组，比如「装个钠」「有没有小地图」\n· 进游戏前自动备份动过的存档，同一个存档只留最新一份\n· 新增「服务器」页：加、改、挪顺序、删除，直接写进 servers.dat\n· 存档点进去能看种子和出生点，能复制，也能一键去查地图\n· 点启动前先检查内存、磁盘、Java，有问题会说出来，但照样能启动\n· 长按「装 Fabric」可以直接换 Forge / NeoForge / Quilt / OptiFine",
+  "url": "https://miku.9k.beer/#android",
+  "size": 162516483
+}
