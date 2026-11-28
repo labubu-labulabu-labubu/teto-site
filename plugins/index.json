@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "updated": "2026-11-28",
+  "plugins": [
+    {
+      "key": "vpntest",
+      "name": "联机诊断",
+      "desc": "测一下联机环境：本机网络、端口、IPv6 一眼看清",
+      "version": "1.0.0",
+      "author": "labubu",
+      "category": "game",
+      "icon": "online",
+      "file": "plugins/packages/vpntest-1.0.0.zip",
+      "sha256": "a190e5ec9c0c1838165faf2045b24c601baffb766f9de2acdda5363281cd43b6",
+      "size": 937,
+      "deps": []
+    },
+    {
+      "key": "skinrand",
+      "name": "随机皮肤",
+      "desc": "掷一个随机皮肤配色方案，给角色换换口味",
+      "version": "1.0.1",
+      "author": "labubu",
+      "category": "create",
+      "icon": "content",
+      "file": "plugins/packages/skinrand-1.0.1.zip",
+      "sha256": "e37acc56f82adcb0387090d675c43f6dc566ad905ed899f2481fdfa26420017a",
+      "size": 814,
+      "deps": []
+    },
+    {
+      "key": "pingtools",
+      "name": "地址速查",
+      "desc": "常用 MC 服务器地址、端口和联机黑话速查",
+      "version": "1.0.0",
+      "author": "labubu",
+      "category": "tool",
+      "icon": "map",
+      "file": "plugins/packages/pingtools-1.0.0.zip",
+      "sha256": "063a24b2b9b7350ee0b9bcd84fc1dec5506bf13649d91437197c757cf342045b",
+      "size": 912,
+      "deps": []
+    },
+    {
+      "key": "mcclock",
+      "name": "MC 时钟",
+      "desc": "看游戏里的日出日落，安排挖矿和睡觉时间",
+      "version": "1.0.0",
+      "author": "labubu",
+      "category": "fun",
+      "icon": "clock",
+      "file": "plugins/packages/mcclock-1.0.0.zip",
+      "sha256": "ef5c0d6a01dd4f05993f8559e56c7bc9a6611ff4e0c0b0cc76f35b304e199852",
+      "size": 886,
+      "deps": []
+    }
+  ]
+}
