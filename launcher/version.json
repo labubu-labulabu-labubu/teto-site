@@ -2,7 +2,7 @@
     "version": "2.3.5",
     "url": "https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe",
     "fallback_url": "https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe",
-    "notes": "① 装模组时把必备前置（Fabric API、Architectury 这类）一起装上，已经装好的版本也能点「检查前置」一键补齐；② 壁纸能换了，静态图铺满整个窗口，gif / 动态 webp 会动；③ 内置陶瓦联机，填个名字建房、房间号进房，不用虚拟局域网也不用开端口映射；④ 首页按钮缩成最上面一行，版本列表搬到「游戏」页并分类。",
+    "notes": "2.3.5：装模组时把必备前置（Fabric API、Architectury 这类）一起装上，装完写明「顺带装了 N 个前置」；已装好的版本也能补——管理窗口点「检查前置」，缺哪些列出来，点「一键补齐」。壁纸能换了，静态图铺满整个窗口，gif / 动态 webp 会动，面板颜色从壁纸采样再压暗。内置陶瓦联机，填名字建房、房间号进房。首页按钮缩成一行，版本列表搬到「游戏」页并分类。",
     "sha256": "9a3302ab48324d88c5c194a9ece0b4cb5588bc6183aeedda990479db6fcccd4f",
     "size": 38490182
 }

@@ -3,65 +3,449 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>海豚启动器 DolphinCraft Launcher</title>
-<meta name="description" content="海豚启动器下载页：Windows 安装版 / 便携版 / 32 位、Linux 源码包、安卓 APK。">
+<title>海豚启动器 · DolphinCraft Launcher</title>
+<meta name="description" content="Minecraft Java 版启动器：选版本、装模组、看崩溃原因、联机开服，一个界面搞定。Windows / Linux / 安卓。">
 <link rel="icon" href="icon.png">
-<link rel="canonical" href="https://miku.niuma.club/">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="canonical" href="https://dolphin.gn0.cc/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="海豚启动器 DolphinCraft Launcher">
-<meta property="og:description" content="海豚启动器下载页：Windows 安装版 / 便携版 / 32 位、Linux 源码包、安卓 APK。">
-<meta property="og:url" content="https://miku.niuma.club/">
-<meta property="og:image" content="https://miku.niuma.club/og.png">
+<meta property="og:title" content="海豚启动器 · DolphinCraft Launcher">
+<meta property="og:description" content="Minecraft Java 版启动器：选版本、装模组、看崩溃原因、联机开服，一个界面搞定。">
+<meta property="og:url" content="https://dolphin.gn0.cc/">
+<meta property="og:image" content="https://dolphin.gn0.cc/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#111412">
+<style>
+:root{
+  --ink:#14171a;
+  --ink-2:#3d4348;
+  --mute:#70777d;
+  --line:#e3e5e4;
+  --line-2:#cfd3d1;
+  --paper:#fbfbf9;
+  --paper-2:#f2f3f0;
+  --dark:#101413;
+  --dark-2:#1b201e;
+  --accent:#166c6c;
+  --accent-ink:#0d4d4d;
+  --focus:#166c6c;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.7 var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
+a:hover{border-bottom-color:var(--accent-ink)}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 
-<link rel="apple-touch-icon" href="icon.png">
-<style>  :root{--fg:#1b1b1f;--muted:#5f6368;--line:#e2e3e6;--link:#1a5fd0;--btn:#1f6feb}  *{box-sizing:border-box}  body{margin:0;background:#fff;color:var(--fg);    font:16px/1.75 -apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;    -webkit-font-smoothing:antialiased}  .page{max-width:720px;margin:0 auto;padding:48px 22px 64px}  header{display:flex;gap:14px;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line)}  header img{width:48px;height:48px;border-radius:10px;border:1px solid var(--line)}  h1{font-size:20px;margin:0;font-weight:600}  .sub{margin:2px 0 0;color:var(--muted);font-size:13.5px}  h2{font-size:16px;margin:36px 0 8px;font-weight:600}  p{margin:10px 0}  .muted{color:var(--muted)}  a{color:var(--link);text-decoration:none}  a:hover{text-decoration:underline}  .dl{margin-top:26px;border:1px solid var(--line);border-radius:10px;padding:20px}  .dl .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}  .btn{display:inline-block;background:var(--btn);color:#fff;font-weight:600;font-size:15px;    padding:10px 20px;border-radius:7px;white-space:nowrap}  .btn:hover{background:#1a5fd0;text-decoration:none}  .btn.ghost{background:#fff;color:var(--btn);border:1px solid #cdd9ec}.btn.ghost:hover{background:#f2f6fd;text-decoration:none}  .file{font-size:13.5px;color:var(--muted)}  .meta{margin:14px 0 0;font-size:12.6px;color:var(--muted);word-break:break-all}  .meta code{font-family:ui-monospace,Consolas,monospace;color:#3c4043}  ul,ol{margin:8px 0;padding-left:22px}  li{margin:5px 0}  details{border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0}  summary{cursor:pointer;font-weight:600;font-size:15px}  details p{margin:8px 0 2px;color:#333}  .note{border-left:3px solid var(--line);padding:2px 0 2px 14px;color:var(--muted);font-size:14px;margin:18px 0}  .video{margin:14px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000}  .video video{display:block;width:100%;height:auto}  .cl{margin:12px 0 0;padding-left:0;list-style:none}  .cl li{margin:7px 0}  .tag{display:inline-block;margin-right:6px;vertical-align:2px;font:600 11px/1.6 ui-monospace,Consolas,monospace;color:#1a5fd0;    background:#eaf2ff;border-radius:4px;padding:1px 6px}  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}</style>
+/* ---------- masthead ---------- */
+.masthead{background:var(--dark);color:#f4f6f4}
+.masthead .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid #262c2a}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:34px;height:34px;border-radius:3px}
+.brand b{display:block;font-size:15px;font-weight:600;letter-spacing:.01em}
+.brand span{display:block;font-size:12px;color:#8d9793;letter-spacing:.06em;text-transform:uppercase}
+.masthead nav{display:flex;gap:20px;font-size:13.5px}
+.masthead nav a{color:#b9c1bd;border:0}
+.masthead nav a:hover{color:#fff}
+
+.hero{padding:64px 0 72px}
+.kicker{margin:0 0 18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#7f8a85}
+.hero h1{
+  margin:0;font-size:44px;line-height:1.14;font-weight:300;letter-spacing:-.028em;
+  color:#fff;max-width:15em;
+}
+.hero h1 em{font-style:normal;font-weight:600;color:#fff;display:block}
+.hero h1 em::after{content:"";display:block;width:64px;height:2px;background:var(--accent);margin-top:22px}
+.lede{margin:26px 0 0;max-width:34em;color:#a9b3af;font-size:15.5px;line-height:1.8}
+.cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:34px}
+.cta .meta{font-size:13px;color:#818b87}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;border:1px solid #fff;background:#fff;color:#0f1412;
+  padding:11px 22px;font-size:14.5px;font-weight:600;border-radius:2px;letter-spacing:.01em;
+  transition:background .12s ease,color .12s ease;
+}
+.btn:hover{background:transparent;color:#fff}
+.btn.ghost{background:transparent;color:#e9eeeb;border-color:#39423e}
+.btn.ghost:hover{border-color:#8d9793;color:#fff}
+.btn.solid{background:var(--dark);color:#fff;border-color:var(--dark)}
+.btn.solid:hover{background:var(--dark-2);color:#fff}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+section + section{border-top:1px solid var(--line)}
+.shead{display:flex;align-items:baseline;gap:14px;margin:0 0 30px}
+.shead .num{font:600 12px/1 var(--mono);color:var(--accent);letter-spacing:.08em}
+.shead h2{margin:0;font-size:23px;font-weight:600;letter-spacing:-.015em}
+.shead .sub{margin-left:auto;font-size:13px;color:var(--mute)}
+.rule{height:1px;background:var(--line);margin:0}
+
+/* ---------- download rows ---------- */
+.rows{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.rows li{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.rows .name{flex:1 1 auto;min-width:0}
+.rows .name b{display:block;font-size:15px;font-weight:600}
+.rows .name span{display:block;font-size:13px;color:var(--mute);margin-top:3px}
+.rows .size{font:13px/1.5 var(--mono);color:var(--mute);white-space:nowrap}
+.dl-link{
+  display:inline-block;padding:8px 16px;border:1px solid var(--line-2);border-radius:2px;
+  font-size:13.5px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2);
+  white-space:nowrap;transition:border-color .12s ease,background .12s ease;
+}
+.dl-link:hover{border-color:var(--ink);background:#fff}
+.dl-link.primary{background:var(--dark);border-color:var(--dark);color:#fff}
+.dl-link.primary:hover{background:var(--dark-2)}
+.mirror{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--mute)}
+.mirror .tag{font:11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.mirror a{display:inline-block;padding:5px 10px;border:1px solid var(--line-2);border-radius:2px;font-size:12.5px;color:var(--ink-2)}
+.mirror a:hover{border-color:var(--ink);color:var(--ink)}
+.note{font-size:13px;color:var(--mute);line-height:1.75;margin:16px 0 0}
+
+/* ---------- changelog ---------- */
+.log{margin:0;padding:0;list-style:none}
+.log li{display:grid;grid-template-columns:74px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.log li:first-child{padding-top:0}
+.log .v{font:600 13px/1.6 var(--mono);color:var(--ink)}
+.log .v small{display:block;font:400 11px/1.6 var(--mono);color:var(--mute);letter-spacing:0;margin-top:2px}
+.log p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.log p b{font-weight:600;color:var(--ink)}
+
+/* ---------- gate ---------- */
+.gate{border:1px solid var(--line);background:var(--paper-2);padding:20px 22px;border-radius:2px}
+.gate .gh{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.gate .gh i{width:8px;height:8px;background:var(--line-2);border-radius:50%;display:inline-block}
+.gate .gh.ok i{background:var(--accent)}
+.gate .gh.ok{color:var(--accent-ink)}
+.gate .body{min-height:66px;display:flex;align-items:center}
+.gate .hint{margin:12px 0 0;font-size:12.5px;color:var(--mute)}
+.gate .fallback{font-size:12.5px;color:var(--ink-2)}
+.is-locked{opacity:.42;pointer-events:none}
+
+/* ---------- spec table ---------- */
+.spec{width:100%;border-collapse:collapse;font-size:14px}
+.spec th,.spec td{text-align:left;padding:11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.spec th{width:150px;font-weight:600;color:var(--ink);white-space:nowrap}
+.spec td{color:var(--ink-2)}
+
+/* ---------- faq ---------- */
+.faq{margin:0}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-size:15px;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";display:inline-block;width:18px;color:var(--mute);font-family:var(--mono)}
+.faq details[open] summary::before{content:"–"}
+.faq p{margin:10px 0 0 18px;font-size:14.5px;color:var(--ink-2)}
+
+/* ---------- video ---------- */
+.video{margin:0;border:1px solid var(--line);background:#000}
+.video video{display:block;width:100%;height:auto}
+
+/* ---------- footer ---------- */
+footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+footer .frow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink-2);border-bottom:1px solid var(--line-2)}
+
+@media (max-width:640px){
+  .hero{padding:44px 0 52px}
+  .hero h1{font-size:31px}
+  .masthead nav{display:none}
+  .rows li{flex-wrap:wrap}
+  .rows .name{flex:1 1 100%}
+  .log li{grid-template-columns:1fr;gap:6px}
+  .spec th{width:104px}
+}
+</style>
 </head>
 <body>
-<div class="page">
-<header>  <img src="icon.png" alt="海豚启动器图标">  <div>    <h1>海豚启动器 DolphinCraft Launcher</h1>    <p class="sub">Windows 2.3.5 · Linux 2.3.5 · 安卓 2.3.0</p>  </div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand">
+        <img src="icon.png" alt="海豚启动器图标" width="34" height="34">
+        <div>
+          <b>海豚启动器</b>
+          <span>DolphinCraft Launcher</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#download">下载</a>
+        <a href="#linux">Linux</a>
+        <a href="#android">安卓</a>
+        <a href="#faq">问答</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <p class="kicker">Minecraft Java Edition · 2.3.5</p>
+      <h1>选版本、装模组、开服联机。<em>一个窗口，全部搞定。</em></h1>
+      <p class="lede">Java 它自己准备，模组前置它自己补齐，崩了直接告诉你哪一行出的事。Windows、Linux、安卓同一套操作。</p>
+      <div class="cta">
+        <a class="btn" href="#download">下载 Windows 版</a>
+        <a class="btn ghost" href="#linux">其他平台</a>
+        <span class="meta">36.7 MB · Windows 10 / 11 · 64 位</span>
+      </div>
+    </div>
+  </div>
 </header>
-<p class="muted" style="margin:14px 0 0">Minecraft 启动器。Java 它自己准备，选完版本点启动。</p>
-<div class="dl" style="margin-top:22px">
-  <div class="row">    <a class="btn" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">安装版 2.3.5（36.7 MB）</a>    <a class="btn ghost" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">便携版（25.0 MB）</a>    <span class="file">Windows 10 / 11 64 位</span>  </div>
-  <div class="row" style="margin-top:12px">    <a class="btn ghost" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">32 位版（22.2 MB）</a>    <span class="file">32 位系统用这个，版本最多玩到 1.20.4</span>  </div>
-  <div class="row" style="margin-top:14px">    <span class="file" style="min-width:52px">主镜像</span>    <a class="btn ghost" href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">安装版</a>    <a class="btn ghost" href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">便携版</a>    <a class="btn ghost" href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">32 位版</a>    <span class="file">ghfast.top</span>  </div>
-  <div class="row" style="margin-top:12px">    <span class="file" style="min-width:52px">备镜像</span>    <a class="btn ghost" href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">安装版</a>    <a class="btn ghost" href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">便携版</a>    <a class="btn ghost" href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">32 位版</a>    <span class="file">gh-proxy.com</span>  </div>
-    <p class="meta">GitHub 直连在国内时通时不通，下不动就先点主镜像，不行换备镜像；两个都不行就用上面第一排的直连链接配迅雷 / IDM 挂着下。镜像站是第三方公益服务，会限速、也会突然关站——那是镜像挂了，不是文件坏了，换一个就行。</p>
-    <details><summary style="font-size:13px;font-weight:400;color:var(--muted)">文件校验（SHA-256）</summary><p style="font-size:12.6px;color:var(--muted)">安装版 <code>9a3302ab48324d88c5c194a9ece0b4cb5588bc6183aeedda990479db6fcccd4f</code><br>便携版 <code>887851303a5de3a30c7308a91788bc8167d0f568435816eb2cba992dd038ce6a</code><br>32 位版 <code>665c56847517194e17a4765e0515e4450e0f36e4b3886202fe370ca58536e487</code><br>Linux 源码包 <code>c40041b3953a3d87441f8356dc13b4e312bf2ad732cce9ea2fbd63f0d858af6f</code></p></details>
-    <p class="meta">2.3.5 的改动：① 装模组时把必备前置（Fabric API、Architectury 这类）一起装上，装完写明「顺带装了 N 个前置」；已经装好的版本也能补——管理窗口点「检查前置」，缺哪些列出来，点「一键补齐」就装上；② 壁纸能换了，静态图铺满整个窗口，gif / 动态 webp 会动，面板颜色从壁纸里采样再压暗，保证字看得清；③ 内置陶瓦联机，填个名字建房、房间号进房，不用虚拟局域网也不用开端口映射；④ 首页按钮缩成最上面一行，版本列表搬到「游戏」页并分类（正式版 / 快照版 / 愚人节版 / 远古版 / 自建）。<br>2.3.4 的改动：① 玩家名现在真的是进游戏用的那个名字——以前读账号配置认错字段，名字存进去了、启动时又换回 Player，UUID 也跟着错，改多少次都不生效；② 无边框窗口有任务栏按钮了，最小化后能找回来；③ 资源中心的「下载 / 安装到实例」按钮不再被挤成 0 高度。<br>2.3.3 的改动：整合包识别更准，zip 里面再套一层 mrpack 也能认出来。</p>
-</div>
-<h2 id="linux">Linux 版</h2>
-<div class="dl" style="margin-top:14px">
-  <div class="row">    <a class="btn" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">Linux 源码包 2.3.5（2.3 MB）</a>    <a class="btn ghost" href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">主镜像</a>    <a class="btn ghost" href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">备镜像</a>    <span class="file">任意发行版</span>  </div>
-  <p class="meta">是源码包，不是编译好的二进制：启动器本身是纯 Python + tkinter，同一份代码在 Linux 上跑，不用为每个发行版编译一遍。<br>解压后 <code>sh linux/launcher.sh</code> 开界面（需要 python3 和 python3-tk：<code>sudo apt install python3-tk</code>）；没桌面环境就用 <code>sh linux/launcher.sh --web 8765</code> 开网页控制台。想进应用菜单：<code>sh linux/install.sh</code>，卸载 <code>sh linux/install.sh --uninstall</code>，不动存档和模组。<br>包里带 README-Linux.txt，发行版差异、Termux、Java 都写在里面。</p>
-</div>
-<h2 id="android">安卓版</h2>
-<div class="dl" style="margin-top:14px">
-  <div class="row">    <a class="btn" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">安卓版（155 MB）</a>    <span class="file">Android 5.0 以上</span>  </div>
-  <div class="row" style="margin-top:12px">    <a class="btn ghost" href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">主镜像 · 安卓版</a>    <a class="btn ghost" href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">备镜像 · 安卓版</a>  </div>
-  <p class="meta">账号和电脑版互通：在电脑上注册「启动器账号」，手机填电脑上显示的那个地址，用的就是同一个号。另外两种是正版账号（微软）和离线账号。<br>联机不用租服务器：电脑版「服务端」页点一下开服，同一个 Wi-Fi 把地址发给朋友就能进；不在一个 Wi-Fi，两边都有 IPv6 也能连。</p>
-</div>
-<div class="video">  <video controls preload="none" poster="promo-poster.jpg" width="1920" height="1080">    <source src="DolphinCraft-promo.mp4" type="video/mp4">    你的浏览器不支持 video 标签，<a href="DolphinCraft-promo.mp4">点这里下载视频</a>。  </video>
-</div>
-<h2>系统要求</h2>
-<ul>
-  <li>Windows 10（1809 以上）或 11，32 / 64 位</li>
-  <li>Linux：任意发行版 + python3 + python3-tk（没有桌面就用网页控制台）</li>
-  <li>安卓 5.0 以上</li>
-  <li>内存 4 GB 以上，加模组建议 8 GB</li>
-</ul>
-<p class="note">第一次打开 Windows 可能弹「已保护你的电脑」，点「更多信息 → 仍要运行」。没买商业证书，都会这样。<br>下完双击，第一次选游戏目录，选版本点启动。</p>
-<details>
-<summary>常见问题</summary>
-<p>要自己装 Java 吗？不用，它按你选的游戏版本自己准备。</p>
-<p>怎么卸载？「设置 → 应用」里卸载，或者开始菜单右键。只删程序本身，存档和模组不动；便携版删掉 exe 就行。</p>
-</details>
-<footer>  <span>海豚启动器 · DolphinCraft Launcher</span>  <span>miku.niuma.club · 2026-10-31</span>
+
+<main>
+<section id="download">
+  <div class="wrap">
+    <div class="shead"><span class="num">01</span><h2>Windows</h2><span class="sub">2.3.5</span></div>
+    <ul class="rows">
+      <li>
+        <div class="name"><b>安装版</b><span>写注册表、进开始菜单，卸载从「设置 → 应用」走</span></div>
+        <span class="size">36.7 MB</span>
+        <a class="dl-link primary" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">下载</a>
+      </li>
+      <li>
+        <div class="name"><b>便携版</b><span>单文件，双击就跑，删掉 exe 就是卸载</span></div>
+        <span class="size">25.0 MB</span>
+        <a class="dl-link" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">下载</a>
+      </li>
+      <li>
+        <div class="name"><b>32 位版</b><span>32 位系统用这个，版本最高到 1.20.4</span></div>
+        <span class="size">22.2 MB</span>
+        <a class="dl-link" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">下载</a>
+      </li>
+    </ul>
+
+    <div class="mirror">
+      <span class="tag">国内镜像</span>
+      <a href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">安装版</a>
+      <a href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">便携版</a>
+      <a href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">32 位</a>
+      <span class="tag">ghfast.top</span>
+    </div>
+    <div class="mirror" style="margin-top:10px">
+      <span class="tag">备用镜像</span>
+      <a href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Setup.exe">安装版</a>
+      <a href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher.exe">便携版</a>
+      <a href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-32bit.exe">32 位</a>
+      <span class="tag">gh-proxy.com</span>
+    </div>
+
+    <p class="note">GitHub 直连在国内时通时不通。下不动就先点镜像，两个都不行就挂迅雷 / IDM 下直连。镜像站是第三方公益服务，会限速、也会突然关站——那是镜像挂了，不是文件坏了，换一个就行。</p>
+
+    <div class="gate" id="gate" style="margin-top:26px">
+      <div class="gh" id="gateHead"><i></i>下载前人机校验</div>
+      <div class="body" id="gateBody">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAGXFvD8IeliUDD_I" data-action="download" data-theme="light" data-size="normal"></div>
+      </div>
+      <p class="hint" id="gateHint">校验通过后，上面的镜像下载按钮才可用。直连下载不受影响。</p>
+      <p class="fallback" id="gateFallback" hidden>校验组件没能加载（可能是网络或广告拦截插件）。<a href="https://github.com/labubu-labulabu-labubu/teto-site/releases/latest">直接去 Releases 页下载</a>。</p>
+    </div>
+  </div>
+</section>
+
+<section id="changelog">
+  <div class="wrap">
+    <div class="shead"><span class="num">02</span><h2>改了什么</h2><span class="sub">最近三版</span></div>
+    <ul class="log">
+      <li>
+        <div class="v">2.3.5<small>10-31</small></div>
+        <p><b>模组前置自动补齐。</b>装模组时把 Fabric API、Architectury 这类必备前置一起装上，装完写明「顺带装了 N 个前置」；已经装好的版本也能补——管理窗口点「检查前置」，缺哪些列出来，点「一键补齐」。<br><b>壁纸能换。</b>静态图铺满整个窗口，gif 和动态 webp 会动，面板颜色从壁纸采样再压暗，保证字看得清。<br><b>内置陶瓦联机。</b>填个名字建房、房间号进房，不用虚拟局域网也不用开端口映射。<br><b>首页收窄。</b>按钮缩成最上面一行，版本列表搬到「游戏」页并分类：正式版 / 快照版 / 愚人节版 / 远古版 / 自建。</p>
+      </li>
+      <li>
+        <div class="v">2.3.4<small>10-30</small></div>
+        <p><b>玩家名真的生效了。</b>以前读账号配置认错字段，名字存进去了、启动时又换回 Player，UUID 跟着错，改多少次都不生效。<br><b>无边框窗口有任务栏按钮了，</b>最小化后能找回来。<br><b>资源中心的「下载 / 安装到实例」</b>不再被挤成 0 高度。</p>
+      </li>
+      <li>
+        <div class="v">2.3.3<small>10-29</small></div>
+        <p><b>整合包识别更准。</b>zip 里面再套一层 mrpack 也能认出来。</p>
+      </li>
+    </ul>
+    <p class="note">安装版的 SHA-256：<br><code style="font-family:var(--mono);font-size:12.5px;color:var(--ink-2)">9a3302ab48324d88c5c194a9ece0b4cb5588bc6183aeedda990479db6fcccd4f</code><br>
+    便携版 <code style="font-family:var(--mono);font-size:12.5px;color:var(--ink-2)">887851303a5de3a30c7308a91788bc8167d0f568435816eb2cba992dd038ce6a</code><br>
+    32 位版 <code style="font-family:var(--mono);font-size:12.5px;color:var(--ink-2)">665c56847517194e17a4765e0515e4450e0f36e4b3886202fe370ca58536e487</code><br>
+    校验方法：<code style="font-family:var(--mono);font-size:12.5px;color:var(--ink-2)">certutil -hashfile 文件 SHA256</code></p>
+  </div>
+</section>
+
+<section id="linux">
+  <div class="wrap">
+    <div class="shead"><span class="num">03</span><h2>Linux</h2><span class="sub">源码包，不是二进制</span></div>
+    <ul class="rows">
+      <li>
+        <div class="name"><b>DolphinCraft-Launcher-2.3.5-Linux.tar.gz</b><span>任意发行版，需要 python3 与 python3-tk</span></div>
+        <span class="size">2.3 MB</span>
+        <a class="dl-link primary" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">下载</a>
+      </li>
+    </ul>
+    <p class="note">启动器本身是纯 Python + tkinter，同一份代码在 Linux 上跑，不用为每个发行版编译。<br>
+    解压后 <code style="font-family:var(--mono)">sh linux/launcher.sh</code> 开界面；没有桌面环境就 <code style="font-family:var(--mono)">sh linux/launcher.sh --web 8765</code> 开网页控制台。<br>
+    进应用菜单 <code style="font-family:var(--mono)">sh linux/install.sh</code>，卸载加 <code style="font-family:var(--mono)">--uninstall</code>，都不动存档和模组。包里带 README-Linux.txt。</p>
+    <div class="mirror" style="margin-top:14px">
+      <span class="tag">镜像</span>
+      <a href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">ghfast.top</a>
+      <a href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.5/DolphinCraft-Launcher-2.3.5-Linux.tar.gz">gh-proxy.com</a>
+    </div>
+  </div>
+</section>
+
+<section id="android">
+  <div class="wrap">
+    <div class="shead"><span class="num">04</span><h2>安卓</h2><span class="sub">2.3.0 · 155 MB</span></div>
+    <ul class="rows">
+      <li>
+        <div class="name"><b>DolphinCraft-Android.apk</b><span>Android 5.0 以上，自带 Java 21 / 25</span></div>
+        <span class="size">155 MB</span>
+        <a class="dl-link primary" href="https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">下载</a>
+      </li>
+    </ul>
+    <p class="note">账号和电脑版互通：在电脑上注册「启动器账号」，手机填电脑上显示的那个地址，用的就是同一个号。另外两种是正版账号（微软）和离线账号。<br>
+    联机不用租服务器：电脑版「服务端」页点一下开服，同一个 Wi-Fi 把地址发给朋友就能进；不在一个 Wi-Fi，两边都有 IPv6 也能连。</p>
+    <div class="mirror" style="margin-top:14px">
+      <span class="tag">镜像</span>
+      <a href="https://ghfast.top/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">ghfast.top</a>
+      <a href="https://gh-proxy.com/https://github.com/labubu-labulabu-labubu/teto-site/releases/download/v2.3.0/DolphinCraft-Android.apk">gh-proxy.com</a>
+    </div>
+  </div>
+</section>
+
+<section id="promo">
+  <div class="wrap">
+    <div class="shead"><span class="num">05</span><h2>看一遍</h2><span class="sub">90 秒</span></div>
+    <figure class="video">
+      <video controls preload="none" poster="promo-poster.jpg" width="1920" height="1080">
+        <source src="DolphinCraft-promo.mp4" type="video/mp4">
+        你的浏览器不支持 video 标签，<a href="DolphinCraft-promo.mp4">点这里下载视频</a>。
+      </video>
+    </figure>
+  </div>
+</section>
+
+<section id="req">
+  <div class="wrap">
+    <div class="shead"><span class="num">06</span><h2>跑得动吗</h2></div>
+    <table class="spec">
+      <tr><th>Windows</th><td>10（1809 以上）或 11，32 / 64 位</td></tr>
+      <tr><th>Linux</th><td>任意发行版 + python3 + python3-tk；没有桌面就用网页控制台</td></tr>
+      <tr><th>安卓</th><td>5.0 以上</td></tr>
+      <tr><th>内存</th><td>4 GB 起步，加模组建议 8 GB</td></tr>
+      <tr><th>Java</th><td>不用自己装，按选的游戏版本自动准备</td></tr>
+    </table>
+    <p class="note">第一次打开 Windows 可能弹「已保护你的电脑」，点「更多信息 → 仍要运行」。没买商业证书，都会这样。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="shead"><span class="num">07</span><h2>常见问题</h2></div>
+    <div class="faq">
+      <details>
+        <summary>要自己装 Java 吗？</summary>
+        <p>不用。它按你选的游戏版本自己准备对应的 Java，装在启动器自己的目录里，不碰系统环境变量。</p>
+      </details>
+      <details>
+        <summary>怎么卸载？</summary>
+        <p>安装版：「设置 → 应用」里卸载，或者开始菜单右键。只删程序本身，存档和模组不动。便携版删掉 exe 就行。</p>
+      </details>
+      <details>
+        <summary>存档会丢吗？</summary>
+        <p>不会。存档、模组、配置都在游戏目录里，卸载和升级都不动它们。换机器把整个游戏目录拷走即可。</p>
+      </details>
+      <details>
+        <summary>和朋友联机要开端口吗？</summary>
+        <p>同一个 Wi-Fi 不用。不在一个网络时，两边都有 IPv6 也能直连；都没有就内置的陶瓦联机走中转。</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span>海豚启动器 · DolphinCraft Launcher</span>
+      <span><a href="https://github.com/labubu-labulabu-labubu/teto-site">GitHub</a> · <a href="https://github.com/labubu-labulabu-labubu/teto-site/releases">Releases</a> · <a href="https://github.com/labubu-labulabu-labubu/teto-site/issues">Issues</a></span>
+    </div>
+    <div class="frow" style="margin-top:14px">
+      <span>dolphin.gn0.cc</span>
+      <span>2026-11-28</span>
+    </div>
+  </div>
 </footer>
-</div>
+
+<script>
+(function () {
+  var gateHead = document.getElementById('gateHead');
+  var gateHint = document.getElementById('gateHint');
+  var gateFallback = document.getElementById('gateFallback');
+  var mirrors = Array.prototype.slice.call(
+    document.querySelectorAll('.mirror a')
+  );
+  var solved = false;
+
+  function lock(on) {
+    mirrors.forEach(function (a) {
+      if (on) { a.classList.add('is-locked'); a.setAttribute('aria-disabled', 'true'); }
+      else { a.classList.remove('is-locked'); a.removeAttribute('aria-disabled'); }
+    });
+  }
+  lock(true);
+
+  mirrors.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!solved) {
+        e.preventDefault();
+        gateHint.textContent = '先完成上面的人机校验，镜像按钮才可用。';
+        gateHint.style.color = '#a33';
+      }
+    });
+  });
+
+  function pass() {
+    solved = true;
+    lock(false);
+    gateHead.classList.add('ok');
+    gateHead.lastChild.nodeValue = ' 已通过';
+    gateHint.textContent = '校验通过。镜像按钮已可用。';
+    gateHint.style.color = '';
+  }
+
+  window.__turnstilePass = pass;
+
+  function boot() {
+    if (!window.turnstile) { fail(); return; }
+    try {
+      window.turnstile.render('.cf-turnstile', {
+        sitekey: '0x4AAAAAAGXFvD8IeliUDD_I',
+        action: 'download',
+        theme: 'light',
+        callback: pass,
+        'error-callback': fail,
+        'timeout-callback': fail
+      });
+    } catch (e) { fail(); }
+  }
+
+  function fail() {
+    gateFallback.hidden = false;
+    gateHint.hidden = true;
+  }
+
+  var s = document.createElement('script');
+  s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__tsOnload';
+  s.async = true; s.defer = true;
+  s.onerror = fail;
+  window.__tsOnload = boot;
+  document.head.appendChild(s);
+  setTimeout(function () {
+    if (!window.turnstile) { fail(); }
+  }, 8000);
+})();
+</script>
 </body>
 </html>

@@ -1,8 +1,8 @@
-﻿# 海豚启动器 · DolphinCraft Launcher
+# 海豚启动器 · DolphinCraft Launcher
 
 Windows 和安卓上的 Minecraft Java 版启动器：选版本、装模组、看崩溃原因都在一个界面里搞定。
 
-- 官网（本仓库就是官网本体，GitHub Pages 托管）：<https://miku.9k.beer/>
+- 官网（本仓库就是官网本体，GitHub Pages 托管）：<https://dolphin.gn0.cc/>
 - 下载：[Releases](https://github.com/labubu-labulabu-labubu/teto-site/releases/latest)
   - `DolphinCraft-Setup.exe` 安装版（Windows 10 / 11 64 位）
   - `DolphinCraft-Launcher.exe` 便携版（单文件，双击运行）
